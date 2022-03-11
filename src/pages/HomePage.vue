@@ -1,18 +1,22 @@
 <template>
   <div class="home flex-grow-1 d-flex flex-column text-light">
-    <div class="row">
-      <div class="col-12">
+
+    <div class="row d-flex justify-content-between">
+      <div class="col-4">
         <Search />
       </div>
+      <div class="col-1">
+        
+      </div>
     </div>
-
-    <CreatePost v-if="account.id == profile.id"/>
 
     <div class="row px-5 mb-5 pb-5 justify-content-center">
       <div v-for="p in posts" :key="p.id" class="col-md-8 m-3">
         <Post :post="p" />
       </div>
     </div>
+
+
   </div>
 </template>
 
@@ -35,8 +39,6 @@ export default {
     });
     return {
       posts: computed(() => AppState.posts),
-      profile: computed(() => AppState.profile),
-      account: computed(() => AppState.account)
     }
   }
 }

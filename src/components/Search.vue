@@ -1,6 +1,6 @@
 <template>
   <form class="row form-group" @submit.prevent="search">
-      <input v-model="searchTerm" type="text" class="col-9" placeholder="search...">
+      <input v-model="searchTerm" type="text" class="col-12" placeholder="search...">
   </form>
 </template>
 

@@ -14,6 +14,7 @@
 
 <script>
 import { reactive } from '@vue/reactivity'
+import { logger } from '../utils/Logger'
 export default {
     setup() {
         const state = reactive({
@@ -23,7 +24,7 @@ export default {
             state,
             async createProject() {
                 try {
-                    
+                    logger.log('createProject Works')
                 } catch (error) {
                     logger.error(error);
                     Pop.toast(error.message, "error");
