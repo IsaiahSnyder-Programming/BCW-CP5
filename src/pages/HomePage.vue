@@ -5,8 +5,14 @@
       <div class="col-4">
         <Search />
       </div>
-      <div class="col-1">
+      <div class="col-1 bg-dark">
         
+        <i
+          v-if="account.id"
+          data-bs-toggle="modal"
+          data-bs-target="#create-post"
+          class="mdi mdi-pencil selectable"
+        ></i>
       </div>
     </div>
 
@@ -16,7 +22,10 @@
       </div>
     </div>
 
-
+      <Modal id="create-post">
+        <template #title> Create Post </template>
+        <template #body> <CreatePost /> </template>
+      </Modal>
   </div>
 </template>
 
@@ -39,6 +48,8 @@ export default {
     });
     return {
       posts: computed(() => AppState.posts),
+      account: computed(() => AppState.account),
+      profile: computed(() => AppState.profile),
     }
   }
 }

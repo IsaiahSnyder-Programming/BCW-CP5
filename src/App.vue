@@ -10,11 +10,14 @@
 <script>
 import { computed } from 'vue'
 import { AppState } from './AppState'
+import { useRouter } from 'vue-router'
+import { Modal } from 'bootstrap'
 export default {
   name: 'App',
   setup() {
+    const router = useRouter();
     return {
-      appState: computed(() => AppState)
+      
     }
   }
 }
