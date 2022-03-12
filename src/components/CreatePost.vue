@@ -2,9 +2,9 @@
     <form class="row bg-grey darken-20 justify-content-center elevation-3 p-2 m-5" @submit.prevent="createProject">
 
         <div class="col-md-4 mb-2">
-            <label class="form-label"><b>Post Title</b></label>
+            <label class="form-label"><b>Post Body</b></label>
             <input
-                v-model="state.editable.title"
+                v-model="state.editable.body"
                 required 
                 type="text"
                 class="form-control"
@@ -14,7 +14,7 @@
         <div class="col-md-8 mb-2">
             <label for="" class="form-label"><b>Image</b> (optional)</label>
             <input
-                v-model="state.editable.postImgs"
+                v-model="state.editable.imgUrl"
                 required
                 type="text"
                 class="form-control"
@@ -41,13 +41,8 @@ export default {
             state,
             async createProject() {
                 try {
-                    const safeUrlArray = state.editable.postImgs
-                        .split(",")
-                        .map((url) => url.trim())
-                        state.editable.postImgs = safeUrlArray
-
-                        await postsService.create(state.editable)
-                        state.editable = {}
+                    await postsService.create(state.editable)
+                    state.editable = {}
                 } catch (error) {
                     logger.error(error);
                     Pop.toast(error.message, "error");
