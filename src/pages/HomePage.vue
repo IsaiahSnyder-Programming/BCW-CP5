@@ -17,8 +17,16 @@
     </div>
 
     <div class="row px-5 mb-5 pb-5 justify-content-center">
-      <div v-for="p in posts" :key="p.id" class="col-md-8 m-3">
+      <div v-for="p in posts" :key="p.id" class="col-md-8">
         <Post :post="p" />
+      </div>
+    </div>
+
+    <div class="row px-5 mb-5 justify-content-center">
+      <div class="row px-5 mb-5 pb-5 justify-content-center">
+        <div v-for="p in products" :key="p.id" class="col-md-4">
+          <Product :product="p" />
+        </div>
       </div>
     </div>
 
@@ -33,6 +41,7 @@
 import { computed, onMounted } from '@vue/runtime-core'
 import { logger } from '../utils/Logger'
 import { postsService } from '../services/PostsService'
+import { productsService } from '../services/ProductsService'
 import Pop from '../utils/Pop'
 import { AppState } from '../AppState'
 export default {
@@ -41,6 +50,7 @@ export default {
     onMounted(async () => {
       try {
         await postsService.getAll();
+        await productsService.getAll()
       } catch (error) {
         logger.error(error)
         Pop.toast(error.message, "error")
@@ -50,6 +60,7 @@ export default {
       posts: computed(() => AppState.posts),
       account: computed(() => AppState.account),
       profile: computed(() => AppState.profile),
+      products: computed(() => AppState.products)
     }
   }
 }
