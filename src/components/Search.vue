@@ -1,7 +1,7 @@
 <template>
-  <form class="row form-group" @submit.prevent="search">
-      <input v-model="searchTerm" type="text" class="col-12" placeholder="search...">
-      <button class="btn btn-outline-primary col-3">search</button>
+  <form class="row form-group justify-content-between p-3" @submit.prevent="search">
+      <input v-model="searchTerm" type="text" class="col-9 rounded-2" placeholder="search...">
+      <button class="btn btn-outline-primary col-3 rounded-2">search</button>
   </form>
 </template>
 

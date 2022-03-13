@@ -56,7 +56,7 @@
             class="dropdown-menu p-0 list-group w-100"
             aria-labelledby="authDropdown"
           >
-            <router-link :to="{ name: 'Account' }">
+            <router-link :to="{ name: '' }">
               <div class="list-group-item list-group-item-action hoverable">
                 Manage Account
               </div>
@@ -80,8 +80,15 @@ import { AuthService } from '../services/AuthService'
 import { AppState } from '../AppState'
 import { computed } from 'vue'
 export default {
+  
   setup() {
     return {
+      goTo(page) {
+          router.push({
+              name: page,
+              params: {id: props.post.creatorId}
+          })
+      },
       user: computed(() => AppState.user),
       async login() {
         AuthService.loginWithPopup()

@@ -15,7 +15,6 @@
             <label for="" class="form-label"><b>Image</b> (optional)</label>
             <input
                 v-model="state.editable.imgUrl"
-                required
                 type="text"
                 class="form-control"
                 aria-describedby="helpId"
