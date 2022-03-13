@@ -8,9 +8,10 @@
         @click="goTo('Profile')"
     >
         <img :src="post.creator.picture" class="profile-pic rounded-circle m-1">
-        <h5 class="text-dark">
+        <h5 class="text-light">
             <b>{{ post.creator.name }}</b>
         </h5>
+        <p>{{post.createdAt}}</p>
     </div>
 
     <!-- NOTE Post Body -->

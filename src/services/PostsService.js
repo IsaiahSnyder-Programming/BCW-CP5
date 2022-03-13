@@ -26,7 +26,8 @@ class PostsService {
     // Need Help With Likes
     async like(postData) {
         const res = await api.put('api/posts/' + postData.id, postData)
-        logger.log(postData.id, res.data)
+        logger.log(postData.likeIds, res.data)
+
     }
 }
 

@@ -1,11 +1,26 @@
 <template>
-  <form class="d-flex flex-column p-5 bg-dark">
-      <label>name</label>
-      <input v-model="editable.name" type="text">
-      <label>picture</label>
-      <input v-model="editable.picture" type="text">
-      <label>coverImg</label>
-      <input v-model="editable.coverImg" type="text">
+  <form class="row d-flex flex-column bg-dark p-3">
+      
+        <h5 class="p-1 pt-3">Username:</h5>
+        <input v-model="editable.name" type="text">
+      
+        <h5 class="p-1 pt-3">Class:</h5>
+        <input v-model="editable.class" type="text">
+
+        <h5 class="p-1 pt-3">Email:</h5>
+        <input v-model="editable.email" type="text">
+
+        <h5 class="p-1 pt-3">Github:</h5>
+        <input v-model="editable.github" type="text">
+      
+        <h5 class="p-1 pt-3">Profile Photo:</h5>
+        <input v-model="editable.picture" type="text">
+      
+        <h5 class="p-1 pt-3">Background Image:</h5>
+        <input v-model="editable.coverImg" type="text">
+
+        <h5 class="p-1 pt-3">Bio:</h5>
+        <input v-model="editable.bio" type="text" maxlength="220">
       <button type="button" class="btn btn-info" @click="update">Submit</button>
   </form>
 </template>

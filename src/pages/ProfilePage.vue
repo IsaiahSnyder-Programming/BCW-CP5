@@ -1,21 +1,35 @@
 <template>
     <div class="container-fluid text-center">
-        <div class="row justify-content-center bg-dark">
+        <div class="row justify-content-center bg-dark cover-img mb-3">
             <!-- <img :src="profile.coverImg" id="coverImg"> -->
-            <div class="col-4 mb-0 cover-img">
+            <div class="col-12 mb-0">
                 <div class="mt-5">
                     <img :src="profile.picture" class="profile-img rounded-circle elevation-4"/>
-                    <h1>{{ profile.name }}</h1>
-                    <p>
-                        {{ profile.email }}
-                        <i
+                    <h5>
+                        
+                    <i
                             v-if="account.id == profile.id"
                             data-bs-toggle="modal"
                             data-bs-target="#edit-profile"
                             class="mdi mdi-pencil selectable"
-                        ></i>
-                    </p>
+                    >Edit Profile</i>
+                    </h5>
+                    <h1>{{ profile.name }}</h1>
+                    <a href="//thiscatdoesnotexist.com/" target="_blank">
+                        <h5>{{ profile.email }}</h5>
+                    </a>
+                    <a href="//thiscatdoesnotexist.com/" target="_blank">
+                        <h5>{{ profile.github }}</h5>
+                    </a>
+                    <h5>
+                        Class: {{ profile.class }}
+                        <i v-if="profile.graduated = true" class="mdi mdi-school"></i>
+                        <div v-else></div>
+                    </h5>
                 </div>
+            </div>
+            <div class="col-6">
+                <h5>{{ profile.bio }}</h5>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -70,7 +84,7 @@ export default {
 
 .cover-img {
     width: 100vw;
-    height: 18rem;
+    height: 30rem;
     background-image: v-bind(coverImg);
     object-fit: cover;
 }
