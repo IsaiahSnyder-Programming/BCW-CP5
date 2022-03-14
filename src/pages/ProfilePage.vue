@@ -23,7 +23,7 @@
                     </a>
                     <h5>
                         Class: {{ profile.class }}
-                        <i v-if="profile.graduated = true" class="mdi mdi-school"></i>
+                        <i v-if="profile.graduated == true" class="mdi mdi-school"></i>
                         <div v-else></div>
                     </h5>
                 </div>
