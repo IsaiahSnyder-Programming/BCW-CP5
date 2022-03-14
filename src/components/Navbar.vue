@@ -4,8 +4,9 @@
       <div class="d-flex flex-column align-items-center">
         <img
           alt="logo"
-          src="../assets/img/cw-logo.png"
+          src="https://theexhibitionpeople.co.uk/wp-content/uploads/2017/08/fake-logo.png"
           height="45"
+          width="120"
         />
       </div>
     </router-link>

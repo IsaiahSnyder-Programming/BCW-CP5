@@ -7,10 +7,13 @@
         class="selectable d-flex align-items-center m-2"
         @click="goTo('Profile')"
     >
-        <img :src="post.creator.picture" class="profile-pic rounded-circle m-1">
+        <img :src="post.creator.picture" class="profile-pic rounded-circle m-1 me-2 bg-light">
         <h5 class="text-light">
             <b>{{ post.creator.name }}</b>
         </h5>
+    </div>
+
+    <div>
         <p>{{post.createdAt}}</p>
     </div>
 

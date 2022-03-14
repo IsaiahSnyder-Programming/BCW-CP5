@@ -1,6 +1,6 @@
 <template>
-  <div class="row d-flex justify-content-center bg-dark rounded-2">
-      <h1 class="text-light">Hello</h1>
+  <div class="row d-flex justify-content-center mx-5 bg-dark rounded-2">
+      <h1 class="text-light"></h1>
       <img :src="product.tall" class="product-pic">
   </div>
 </template>

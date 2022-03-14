@@ -2,29 +2,54 @@
   <div class="home flex-grow-1 d-flex flex-column text-light">
 
     <div class="row d-flex justify-content-between">
-      <div class="col-4">
+      <div class="col-4 bg-dark">
         <Search />
       </div>
-      <div class="col-1 bg-dark">
-        
+      <div class="col-7 bg-dark"></div>
+      <div class="col-1 bg-dark d-flex align-items-center">
         <i
           v-if="account.id"
           data-bs-toggle="modal"
           data-bs-target="#create-post"
           class="mdi mdi-pencil selectable"
-        ></i>
+        >Create New Post</i>
       </div>
     </div>
 
+    <div class="row d-flex justify-content-around">
+      <div class="col-2 d-flex justify-content-end">
+        <h2 
+          class="text-dark"
+          @click="pageTurn()"
+          >
+          <i class="mdi mdi-arrow-left selectable"></i>
+        </h2>
+      </div>
+
+      <div class="col-6">
+        <h2 class="text-dark"></h2>
+      </div>
+
+      <div class="col-2 d-flex justify-content-start">
+        <h2 
+          class="text-dark"
+          @click="pageTurn()"
+          >
+          <i class="mdi mdi-arrow-right selectable"></i>
+        </h2>
+      </div>
+
+    </div>
+
     <div class="row px-5 mb-5 pb-5 justify-content-center">
-      <div v-for="p in posts" :key="p.id" class="col-md-8">
+      <div v-for="p in posts" :key="p.id" class="col-md-8 mt-2">
         <Post :post="p" />
       </div>
     </div>
 
     <div class="row px-5 mb-5 justify-content-center">
       <div class="row px-5 mb-5 pb-5 justify-content-center">
-        <div v-for="p in products" :key="p.id" class="col-md-4">
+        <div v-for="p in products" :key="p.id" class="col-md-4 mx-5">
           <Product :product="p" />
         </div>
       </div>
@@ -62,7 +87,12 @@ export default {
       profile: computed(() => AppState.profile),
       products: computed(() => AppState.products)
     }
+  },
+
+  async pageTurn() {
+    
   }
+
 }
 </script>
 
