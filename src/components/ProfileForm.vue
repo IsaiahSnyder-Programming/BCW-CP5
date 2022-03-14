@@ -21,6 +21,9 @@
 
         <h5 class="p-1 pt-3">Bio:</h5>
         <input v-model="editable.bio" type="text" maxlength="220">
+        <!-- NOTE not sure why this isn't working.... -->
+        <h5 class="p-1 pt-3">Graduated?:</h5>
+        <input v-model="editable.graduated" type="checkbox" id="graduated" name="graduated">
       <button type="button" class="btn btn-info" @click="update">Submit</button>
   </form>
 </template>

@@ -30,6 +30,7 @@
         <h2 class="text-dark"></h2>
       </div>
 
+<!-- Take in whole string from appstate and put into pageTurn(nextPage) -->
       <div class="col-2 d-flex justify-content-start">
         <h2 
           class="text-dark"
@@ -89,8 +90,8 @@ export default {
     }
   },
 
-  async pageTurn() {
-    
+  async pageTurn(page) {
+    // Pass to service
   }
 
 }

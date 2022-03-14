@@ -7,8 +7,10 @@ class PostsService {
 
     async getAll(query = {}) {
         const res = await api.get('api/posts', {params: query})
-        logger.log(res.data.posts)
+        logger.log(res.data)
         AppState.posts = res.data.posts
+        // NOTE when you get postdata back, save the pages in your AppState (nextPage, previousPage)
+        // grab computed() for next and previous
     }
 
     async create(postData) {
@@ -27,8 +29,16 @@ class PostsService {
     async like(postData) {
         const res = await api.put('api/posts/' + postData.id, postData)
         logger.log(postData.likeIds, res.data)
+        // NOTE after getting res back, find the old post in the appstate, splice it out, and replace with new one
+        // inspire for reference
 
     }
+
+
+
+    // changepage(page)
+    // get(page)
+    // update posts and pages from there with appstate.stuff thingys
 }
 
 export const postsService = new PostsService()
